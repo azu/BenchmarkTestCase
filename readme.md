@@ -19,6 +19,15 @@ TODO: Cocoapods
 @end
 ```
 
+### Run Benchmark
+
+run benchmark as testcase.
+
+```
+2013-10-14 01:47:25.230 xctest[79268:303] benchYourTest
+└ Total :0.00495s | Avg.: 0.00000s
+```
+
 ## Contributing
 
 1. Fork it!
