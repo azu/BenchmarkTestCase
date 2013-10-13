@@ -5,6 +5,7 @@
 
 #import "BenchmarkTestObserver.h"
 #import "BenchmarkTestCase.h"
+#import "BenchmarkTestUtil.h"
 
 
 @implementation BenchmarkTestObserver {
@@ -22,7 +23,7 @@
 
 - (void)stopObserving {
     [super stopObserving];
-    [BenchmarkTestCase removeXCTestObserver];
+    [BenchmarkTestUtil removeXCTestObserver];
 }
 
 @end

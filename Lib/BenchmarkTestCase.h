@@ -13,9 +13,5 @@
 
 + (void)benchmarkOutPut:(NSString *) selectorName timeInterval:(NSTimeInterval) timeInterval;
 
-+ (void)addXCTestObserver;
-
-+ (void)removeXCTestObserver;
-
 + (void)setUpBenchmark;
 @end
