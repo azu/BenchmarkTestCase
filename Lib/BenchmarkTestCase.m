@@ -14,17 +14,23 @@
 
 static BenchmarkTestCase *_sharedManager = nil;
 
+static dispatch_once_t onceToken;
+
 + (instancetype)sharedManager {
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedManager = [[self alloc] init];
     });
     return _sharedManager;
 }
 
+- (void)dealloc {
+    onceToken = 0;
+    _sharedManager = nil;
+}
+
 #pragma mark - Configuration
 + (NSString *)benchmarkPrefix {
-    return @"bench";
+    return @"time";
 }
 
 + (NSUInteger)benchmarkRepeatCount {
@@ -36,6 +42,7 @@ static BenchmarkTestCase *_sharedManager = nil;
         timeInterval,
         timeInterval / [[self class] benchmarkRepeatCount]);
 }
+
 #pragma mark - Util
 + (NSArray *)benchmarkMethods:(NSString *) prefix {
     NSArray *methodNames = [self instanceMethodNames];
@@ -55,13 +62,36 @@ static BenchmarkTestCase *_sharedManager = nil;
 }
 
 #pragma mark - Setup
+
 + (void)initialize {
     [super initialize];
     [self setUpBenchmark];
+    [self addXCTestObserver];
 }
 
+
++ (void)addXCTestObserver {
+    [[NSUserDefaults standardUserDefaults] setObject:@"XCTestLog,BenchmarkTestObserver" forKey:XCTestObserverClassKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (void)removeXCTestObserver {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *value = [defaults objectForKey:XCTestObserverClassKey];
+    NSString *className = NSStringFromClass([self class]);
+    NSMutableArray *values = [[value componentsSeparatedByString:@","] mutableCopy];
+    [values removeObject:className];
+    if ([values count] == 0) {
+        [defaults removeObjectForKey:XCTestObserverClassKey];
+    } else {
+        [defaults setObject:[values componentsJoinedByString:@","] forKey:XCTestObserverClassKey];
+    }
+    [defaults synchronize];
+}
+
+
 + (void)setUpBenchmark {
-    XCTestSuite *suite = [XCTestSuite defaultTestSuite];
+    XCTestSuite *suite = [self defaultTestSuite];
     NSArray *methodNames = [self benchmarkMethods:[self benchmarkPrefix]];
     for (NSString *methodName in methodNames) {
         SEL benchmarkSelector = NSSelectorFromString(methodName);
@@ -73,10 +103,9 @@ static BenchmarkTestCase *_sharedManager = nil;
 
 + (SEL)createBenchmarkSelector:(SEL) selector {
     NSString *newSelector = NSStringFromSelector(selector);
-    NSString *creationMethodName = [NSString stringWithFormat:@"test%@",
-                                                              [newSelector capitalizedString]];
+    NSString *creationMethodName = [NSString stringWithFormat:@"test_%@",
+                                                              newSelector];
     SEL benchmarkSelector = NSSelectorFromString(creationMethodName);
-    class_getMethodImplementation([self class], @selector(performSelectorWithLoop:));
     class_addMethod([self class], benchmarkSelector,
         [[self sharedManager] selectorForPerform:selector], "v@:");
     return benchmarkSelector;
@@ -91,14 +120,11 @@ static BenchmarkTestCase *_sharedManager = nil;
 }
 
 - (void)performSelectorWithLoop:(SEL) selector {
-    NSDate *startDate = [NSDate date];
     for (NSUInteger i = 0; i < [[self class] benchmarkRepeatCount]; i++) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [self performSelector:selector];
 #pragma clang diagnostic pop
     }
-    NSTimeInterval timeInterval = -[startDate timeIntervalSinceNow];
-    [[self class] benchmarkOutPut:NSStringFromSelector(selector) timeInterval:timeInterval];
 }
 @end

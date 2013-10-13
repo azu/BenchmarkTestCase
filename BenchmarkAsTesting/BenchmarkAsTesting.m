@@ -45,11 +45,11 @@
 }
 
 
-- (void)benchPatternOne {
+- (void)timePatternOne {
     [UniqueArray patternOne:testArray];
 }
 
-- (void)benchPatternTwo{
+- (void)timePatternTwo{
     [UniqueArray patternTwo:testArray];
 }
 
