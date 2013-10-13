@@ -14,7 +14,6 @@
 #pragma mark - Singleton methods
 
 static BenchmarkTestCase *_sharedManager = nil;
-
 static dispatch_once_t onceToken;
 
 + (instancetype)sharedManager {
@@ -26,7 +25,7 @@ static dispatch_once_t onceToken;
 
 - (void)dealloc {
     onceToken = 0;
-    _sharedManager = nil;
+    _sharedManager = NULL;
 }
 
 #pragma mark - Configuration

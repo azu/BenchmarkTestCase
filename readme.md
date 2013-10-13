@@ -4,7 +4,9 @@ XCTestCase for Benchmark.
 
 ## Installation
 
-TODO: Cocoapods
+``` ruby
+pod 'BenchmarkTestCase',:git => 'https://github.com/azu/BenchmarkTestCase.git'
+```
 
 ## Usage
 
@@ -13,7 +15,8 @@ TODO: Cocoapods
 
 @end
 @implementation YourBenchmarkTestCase
-- (void)benchYourTest{
+- (void)timeYourTest{
+    // default: time prefix is benchmark target.
     // benchmark method...
 }
 @end
