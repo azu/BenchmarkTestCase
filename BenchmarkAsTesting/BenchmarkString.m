@@ -17,7 +17,7 @@
 }
 
 
-- (void)timePatternOne {
+- (void)timePatternNSNumber {
     [NSNumber numberWithInteger:1];
 }
 

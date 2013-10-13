@@ -71,15 +71,20 @@ static dispatch_once_t onceToken;
 
 
 + (void)addXCTestObserver {
-    [[NSUserDefaults standardUserDefaults] setObject:@"XCTestLog,BenchmarkTestObserver" forKey:XCTestObserverClassKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSString *className = NSStringFromClass([BenchmarkTestCase class]);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *observers = [defaults objectForKey:XCTestObserverClassKey];
+    NSMutableArray *values = [[observers componentsSeparatedByString:@","] mutableCopy];
+    [values addObject:className];
+    [defaults setObject:[values componentsJoinedByString:@","] forKey:XCTestObserverClassKey];
+    [defaults synchronize];
 }
 
 + (void)removeXCTestObserver {
+    NSString *className = NSStringFromClass([BenchmarkTestCase class]);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *value = [defaults objectForKey:XCTestObserverClassKey];
-    NSString *className = NSStringFromClass([self class]);
-    NSMutableArray *values = [[value componentsSeparatedByString:@","] mutableCopy];
+    NSString *observers = [defaults objectForKey:XCTestObserverClassKey];
+    NSMutableArray *values = [[observers componentsSeparatedByString:@","] mutableCopy];
     [values removeObject:className];
     if ([values count] == 0) {
         [defaults removeObjectForKey:XCTestObserverClassKey];
