@@ -6,8 +6,10 @@
 #import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
 
-@interface BenchmarkTestCase : XCTestCase
+@interface AZBenchmarkTestCase : XCTestCase
+// benchmark method prefix
 + (NSString *)benchmarkPrefix;
 
+// repeat count of benchmark method
 + (NSUInteger)benchmarkRepeatCount;
 @end

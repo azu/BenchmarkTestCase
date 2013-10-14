@@ -5,6 +5,6 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol BenchmarkReporting <NSObject>
+@protocol AZBenchmarkReporting <NSObject>
 - (NSString *)outputStringWithXCTestRuns:(NSArray *) testRuns;
 @end

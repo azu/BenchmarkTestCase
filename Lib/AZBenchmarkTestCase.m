@@ -3,15 +3,15 @@
 //
 
 
-#import "BenchmarkTestCase.h"
-#import "BenchmarkTestUtil.h"
+#import "AZBenchmarkTestCase.h"
+#import "AZBenchmarkTestUtil.h"
 #import <objc/runtime.h>
 
-@interface BenchmarkTestCase ()
+@interface AZBenchmarkTestCase ()
 + (void)setUpBenchmark;
 @end
 
-@implementation BenchmarkTestCase {
+@implementation AZBenchmarkTestCase {
 
 }
 
@@ -47,9 +47,8 @@
 + (void)initialize {
     [super initialize];
     [self setUpBenchmark];
-    [BenchmarkTestUtil addXCTestObserver];
+    [AZBenchmarkTestUtil addXCTestObserver];
 }
-
 
 + (void)setUpBenchmark {
     XCTestSuite *suite = [self defaultTestSuite];

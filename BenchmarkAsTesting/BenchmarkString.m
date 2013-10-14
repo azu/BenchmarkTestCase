@@ -7,9 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "BenchmarkTestCase.h"
+#import "AZBenchmarkTestCase.h"
 
-@interface BenchmarkString : BenchmarkTestCase
+@interface BenchmarkString : AZBenchmarkTestCase
 
 @end
 

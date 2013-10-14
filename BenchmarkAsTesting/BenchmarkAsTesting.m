@@ -7,10 +7,10 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "BenchmarkTestCase.h"
+#import "AZBenchmarkTestCase.h"
 #import "UniqueArray.h"
 
-@interface BenchmarkAsTesting : BenchmarkTestCase
+@interface BenchmarkAsTesting : AZBenchmarkTestCase
 
 @end
 

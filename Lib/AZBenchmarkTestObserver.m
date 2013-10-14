@@ -3,19 +3,17 @@
 //
 
 
-#import "BenchmarkTestObserver.h"
-#import "BenchmarkTestUtil.h"
-#import "BenchmarkReporter.h"
-#import "BenchmarkTestCase.h"
-#import "BenchmarkConfig.h"
+#import "AZBenchmarkTestObserver.h"
+#import "AZBenchmarkReporter.h"
+#import "AZBenchmarkTestCase.h"
+#import "AZBenchmarkConfig.h"
 
 
-@interface BenchmarkTestObserver ()
+@interface AZBenchmarkTestObserver ()
 @property(nonatomic, strong) NSMutableArray *testRuns;
 @end
 
-@implementation BenchmarkTestObserver
-
+@implementation AZBenchmarkTestObserver
 - (NSMutableArray *)testRuns {
     if (_testRuns == nil) {
         _testRuns = [NSMutableArray array];
@@ -26,7 +24,7 @@
 - (NSArray *)filteredTestRuns:(NSMutableArray *) array {
     NSMutableArray *benchmarkTestRuns = [NSMutableArray array];
     for (XCTestRun *xcTestRun in array) {
-        if ([xcTestRun.test isKindOfClass:[BenchmarkTestCase class]]) {
+        if ([xcTestRun.test isKindOfClass:[AZBenchmarkTestCase class]]) {
             [benchmarkTestRuns addObject:xcTestRun];
         }
     }
@@ -38,11 +36,16 @@
     [self.testRuns addObject:testRun];
 }
 
+- (void)startObserving {
+    [super startObserving];
+}
+
 - (void)stopObserving {
     [super stopObserving];
-    [BenchmarkTestUtil removeXCTestObserver];
+    // FIXME: first time doesn't observe this class...
+//    [AZBenchmarkTestUtil removeXCTestObserver];
     NSArray *filteredTestRuns = [self filteredTestRuns:self.testRuns];
-    NSObject <BenchmarkReporting> *reporter = [BenchmarkConfig defaultReporter];
+    NSObject <AZBenchmarkReporting> *reporter = [AZBenchmarkConfig defaultReporter];
     NSLog(@"%@", [reporter outputStringWithXCTestRuns:filteredTestRuns]);
 }
 

@@ -11,7 +11,7 @@ pod 'BenchmarkTestCase',:git => 'https://github.com/azu/BenchmarkTestCase.git'
 ## Usage
 
 ```objc
-@interface YourBenchmarkTestCase : BenchmarkTestCase
+@interface YourBenchmarkTestCase : AZBenchmarkTestCase
 
 @end
 @implementation YourBenchmarkTestCase
@@ -22,9 +22,24 @@ pod 'BenchmarkTestCase',:git => 'https://github.com/azu/BenchmarkTestCase.git'
 @end
 ```
 
+### Configurable benchmark
+
+``` objc
+// benchmark method prefix
++ (NSString *)benchmarkPrefix {
+    return @"time";
+}
+// repeat count of benchmark method
++ (NSUInteger)benchmarkRepeatCount {
+    return 100;
+}
+```
+
 ### Run Benchmark
 
-run benchmark as testcase.
+run benchmark as testCase.
+
+Example output :
 
 ```
 :Name                                              :Total(s)  :Avg(s)
@@ -39,12 +54,18 @@ run benchmark as testcase.
 Set ``setDefaultReporter:(NSObject <BenchmarkReporting>*)reporter``
 
 ```objc
-@interface BenchmarkConfig : NSObject
+@interface AZBenchmarkConfig : NSObject
 + (NSObject <BenchmarkReporting> *)defaultReporter;
 
 + (void)setDefaultReporter:(NSObject <BenchmarkReporting>*)reporter;
 @end
 ```
+
+## Known Issue
+
+First time doesn't work benchmark observer.
+
+I don't know when to add observe ``+ (void)addXCTestObserver;`` ...
 
 ## Contributing
 

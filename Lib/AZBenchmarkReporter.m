@@ -4,11 +4,11 @@
 
 
 #import <XCTest/XCTest.h>
-#import "BenchmarkReporter.h"
-#import "BenchmarkTestCase.h"
+#import "AZBenchmarkReporter.h"
+#import "AZBenchmarkTestCase.h"
 
 
-@implementation BenchmarkReporter {
+@implementation AZBenchmarkReporter {
 
 }
 
@@ -25,7 +25,7 @@
                                                        [xcTestRun.test.name UTF8String],
                                                        totalTimeInterval,
                                                        totalTimeInterval / repeatCount,
-                                                       [NSString stringWithFormat:@"(1/%d)", repeatCount]];
+                                                     [NSString stringWithFormat:@"(1/%d)", repeatCount]];
 
         [lineArray addObject:lineLog];
     }

@@ -7,5 +7,5 @@
 #import <XCTest/XCTest.h>
 
 
-@interface BenchmarkTestObserver : XCTestObserver
+@interface AZBenchmarkTestObserver : XCTestObserver
 @end

@@ -5,11 +5,10 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol BenchmarkReporting;
+@protocol AZBenchmarkReporting;
 
 
-@interface BenchmarkTestUtil : NSObject
-
+@interface AZBenchmarkTestUtil : NSObject
 + (void)addXCTestObserver;
 
 + (void)removeXCTestObserver;
