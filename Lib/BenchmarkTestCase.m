@@ -7,6 +7,10 @@
 #import "BenchmarkTestUtil.h"
 #import <objc/runtime.h>
 
+@interface BenchmarkTestCase ()
++ (void)setUpBenchmark;
+@end
+
 @implementation BenchmarkTestCase {
 
 }

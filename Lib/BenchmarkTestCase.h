@@ -13,5 +13,4 @@
 
 + (void)benchmarkOutPut:(NSString *) selectorName timeInterval:(NSTimeInterval) timeInterval;
 
-+ (void)setUpBenchmark;
 @end
