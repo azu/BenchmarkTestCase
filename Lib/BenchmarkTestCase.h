@@ -11,6 +11,4 @@
 
 + (NSUInteger)benchmarkRepeatCount;
 
-+ (void)benchmarkOutPut:(NSString *) selectorName timeInterval:(NSTimeInterval) timeInterval;
-
 @end

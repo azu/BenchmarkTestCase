@@ -24,12 +24,6 @@
     return 100;
 }
 
-+ (void)benchmarkOutPut:(NSString *) selectorName timeInterval:(NSTimeInterval) timeInterval {
-    NSLog(@"%@ \n└ Total :%.5fs | Avg.: %.5fs", selectorName,
-        timeInterval,
-        timeInterval / [[self class] benchmarkRepeatCount]);
-}
-
 #pragma mark - Util
 + (NSArray *)benchmarkMethods:(NSString *) prefix {
     NSArray *methodNames = [self instanceMethodNames];
