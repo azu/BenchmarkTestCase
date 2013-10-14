@@ -10,5 +10,4 @@
 + (NSString *)benchmarkPrefix;
 
 + (NSUInteger)benchmarkRepeatCount;
-
 @end
