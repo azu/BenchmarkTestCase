@@ -11,6 +11,8 @@
 		17B5C3AC3FEFC44A703A6945 /* BenchmarkTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CA649362CC83C8E835B7 /* BenchmarkTestObserver.m */; };
 		17B5C443A9C19AB533C357BB /* BenchmarkAsTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C6AF4C8F1C86DB86250F /* BenchmarkAsTesting.m */; };
 		17B5C51D971CBF79C1972BAE /* UniqueArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C573F41B23B54F08FB20 /* UniqueArray.m */; };
+		17B5C54350B474401C680618 /* UnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CF7A16933AC59066724F /* UnitTest.m */; };
+		17B5C7E949A490699FA70534 /* BenchmarkReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C4DC458E7F8C434EF3B1 /* BenchmarkReporter.m */; };
 		17B5C93225D302E6CF65BD7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5C17C2BB8E7CC50F1A054 /* Foundation.framework */; };
 		17B5CA601BF25AAD44A0C4EF /* BenchmarkTestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CBBA8E652744E3F293B1 /* BenchmarkTestUtil.m */; };
 		17B5CA8195F45A5A20502F89 /* BenchmarkTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CECC45BF90554CE20609 /* BenchmarkTestCase.m */; };
@@ -25,6 +27,7 @@
 		17B5C17C2BB8E7CC50F1A054 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17B5C2AC04B90AAEB55D0F80 /* BenchmarkString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkString.m; sourceTree = "<group>"; };
 		17B5C471FAFCED2ECFAE359A /* BenchmarkTestObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkTestObserver.h; sourceTree = "<group>"; };
+		17B5C4DC458E7F8C434EF3B1 /* BenchmarkReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkReporter.m; sourceTree = "<group>"; };
 		17B5C573F41B23B54F08FB20 /* UniqueArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniqueArray.m; sourceTree = "<group>"; };
 		17B5C6AF4C8F1C86DB86250F /* BenchmarkAsTesting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BenchmarkAsTesting.m; sourceTree = "<group>"; };
 		17B5C6F68DA93FA75C7AF817 /* BenchmarkAsTesting-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BenchmarkAsTesting-Prefix.pch"; sourceTree = "<group>"; };
@@ -37,7 +40,9 @@
 		17B5CB83CCABA031B40DAFEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17B5CBBA8E652744E3F293B1 /* BenchmarkTestUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkTestUtil.m; sourceTree = "<group>"; };
 		17B5CECC45BF90554CE20609 /* BenchmarkTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkTestCase.m; sourceTree = "<group>"; };
+		17B5CEE425CF3C299D0A6EF9 /* BenchmarkReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkReporter.h; sourceTree = "<group>"; };
 		17B5CF00E98A78C9FEC0ADC0 /* BenchmarkAsTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BenchmarkAsTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17B5CF7A16933AC59066724F /* UnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,8 @@
 				17B5C471FAFCED2ECFAE359A /* BenchmarkTestObserver.h */,
 				17B5CBBA8E652744E3F293B1 /* BenchmarkTestUtil.m */,
 				17B5C718FE4CACE1174BCE89 /* BenchmarkTestUtil.h */,
+				17B5C4DC458E7F8C434EF3B1 /* BenchmarkReporter.m */,
+				17B5CEE425CF3C299D0A6EF9 /* BenchmarkReporter.h */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -114,6 +121,7 @@
 				17B5C573F41B23B54F08FB20 /* UniqueArray.m */,
 				17B5C05801C466967321E86A /* UniqueArray.h */,
 				17B5C2AC04B90AAEB55D0F80 /* BenchmarkString.m */,
+				17B5CF7A16933AC59066724F /* UnitTest.m */,
 			);
 			path = BenchmarkAsTesting;
 			sourceTree = "<group>";
@@ -185,6 +193,8 @@
 				17B5C3AC3FEFC44A703A6945 /* BenchmarkTestObserver.m in Sources */,
 				17B5CC9A8C25EB01AFBAB833 /* BenchmarkString.m in Sources */,
 				17B5CA601BF25AAD44A0C4EF /* BenchmarkTestUtil.m in Sources */,
+				17B5C54350B474401C680618 /* UnitTest.m in Sources */,
+				17B5C7E949A490699FA70534 /* BenchmarkReporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

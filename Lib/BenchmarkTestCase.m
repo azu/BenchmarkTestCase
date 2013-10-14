@@ -11,30 +11,13 @@
 
 }
 
-#pragma mark - Singleton methods
-
-static BenchmarkTestCase *_sharedManager = nil;
-static dispatch_once_t onceToken;
-
-+ (instancetype)sharedManager {
-    dispatch_once(&onceToken, ^{
-        _sharedManager = [[self alloc] init];
-    });
-    return _sharedManager;
-}
-
-- (void)dealloc {
-    onceToken = 0;
-    _sharedManager = NULL;
-}
-
 #pragma mark - Configuration
 + (NSString *)benchmarkPrefix {
     return @"time";
 }
 
 + (NSUInteger)benchmarkRepeatCount {
-    return 10;
+    return 100;
 }
 
 + (void)benchmarkOutPut:(NSString *) selectorName timeInterval:(NSTimeInterval) timeInterval {
@@ -76,8 +59,8 @@ static dispatch_once_t onceToken;
     for (NSString *methodName in methodNames) {
         SEL benchmarkSelector = NSSelectorFromString(methodName);
         SEL newSelector = [self createBenchmarkSelector:benchmarkSelector];
-        BenchmarkTestCase *aCase = [self testCaseWithSelector:newSelector];
-        [suite addTest:aCase];
+        XCTest *newTest = [self testCaseWithSelector:newSelector];
+        [suite addTest:newTest];
     }
 }
 
@@ -87,7 +70,7 @@ static dispatch_once_t onceToken;
                                                               newSelector];
     SEL benchmarkSelector = NSSelectorFromString(creationMethodName);
     class_addMethod([self class], benchmarkSelector,
-        [[self sharedManager] selectorForPerform:selector], "v@:");
+        [[self new] selectorForPerform:selector], "v@:");
     return benchmarkSelector;
 }
 
