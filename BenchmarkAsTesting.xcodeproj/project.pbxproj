@@ -17,6 +17,7 @@
 		17B5CA601BF25AAD44A0C4EF /* BenchmarkTestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CBBA8E652744E3F293B1 /* BenchmarkTestUtil.m */; };
 		17B5CA8195F45A5A20502F89 /* BenchmarkTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5CECC45BF90554CE20609 /* BenchmarkTestCase.m */; };
 		17B5CA83C33D8A124E820CCF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5CB83CCABA031B40DAFEA /* UIKit.framework */; };
+		17B5CBF40DB7CC4AAEC1A4F2 /* BenchmarkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C2431FA0700D02D2FEE8 /* BenchmarkConfig.m */; };
 		17B5CC9A8C25EB01AFBAB833 /* BenchmarkString.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5C2AC04B90AAEB55D0F80 /* BenchmarkString.m */; };
 		17B5CD590751412AD266E52A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17B5C33D9F649A73AA00EA68 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 		17B5C05801C466967321E86A /* UniqueArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniqueArray.h; sourceTree = "<group>"; };
 		17B5C0DF94430DE61172E46F /* BenchmarkAsTesting-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "BenchmarkAsTesting-Info.plist"; sourceTree = "<group>"; };
 		17B5C17C2BB8E7CC50F1A054 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		17B5C2431FA0700D02D2FEE8 /* BenchmarkConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkConfig.m; sourceTree = "<group>"; };
 		17B5C2AC04B90AAEB55D0F80 /* BenchmarkString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkString.m; sourceTree = "<group>"; };
 		17B5C471FAFCED2ECFAE359A /* BenchmarkTestObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkTestObserver.h; sourceTree = "<group>"; };
 		17B5C4DC458E7F8C434EF3B1 /* BenchmarkReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkReporter.m; sourceTree = "<group>"; };
@@ -34,11 +36,13 @@
 		17B5C718FE4CACE1174BCE89 /* BenchmarkTestUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkTestUtil.h; sourceTree = "<group>"; };
 		17B5C815430E073FB2E46C6F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		17B5C906C715F1994E679D41 /* BenchmarkTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkTestCase.h; sourceTree = "<group>"; };
+		17B5C922AFB37E8602CA0C77 /* BenchmarkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkConfig.h; sourceTree = "<group>"; };
 		17B5CA649362CC83C8E835B7 /* BenchmarkTestObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkTestObserver.m; sourceTree = "<group>"; };
 		17B5CA7A8E6031E3257C7F6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17B5CB6E6FEC3EF0524E9773 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = readme.md; sourceTree = "<group>"; };
 		17B5CB83CCABA031B40DAFEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17B5CBBA8E652744E3F293B1 /* BenchmarkTestUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkTestUtil.m; sourceTree = "<group>"; };
+		17B5CE365AB0B6FE444CF394 /* BenchmarkReporting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkReporting.h; sourceTree = "<group>"; };
 		17B5CECC45BF90554CE20609 /* BenchmarkTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenchmarkTestCase.m; sourceTree = "<group>"; };
 		17B5CEE425CF3C299D0A6EF9 /* BenchmarkReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenchmarkReporter.h; sourceTree = "<group>"; };
 		17B5CF00E98A78C9FEC0ADC0 /* BenchmarkAsTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BenchmarkAsTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +84,9 @@
 				17B5C718FE4CACE1174BCE89 /* BenchmarkTestUtil.h */,
 				17B5C4DC458E7F8C434EF3B1 /* BenchmarkReporter.m */,
 				17B5CEE425CF3C299D0A6EF9 /* BenchmarkReporter.h */,
+				17B5CE365AB0B6FE444CF394 /* BenchmarkReporting.h */,
+				17B5C2431FA0700D02D2FEE8 /* BenchmarkConfig.m */,
+				17B5C922AFB37E8602CA0C77 /* BenchmarkConfig.h */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -195,6 +202,7 @@
 				17B5CA601BF25AAD44A0C4EF /* BenchmarkTestUtil.m in Sources */,
 				17B5C54350B474401C680618 /* UnitTest.m in Sources */,
 				17B5C7E949A490699FA70534 /* BenchmarkReporter.m in Sources */,
+				17B5CBF40DB7CC4AAEC1A4F2 /* BenchmarkConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,8 +4,8 @@
 
 
 #import <Foundation/Foundation.h>
+#import "BenchmarkReporting.h"
 
 
-@interface BenchmarkReporter : NSObject
-+ (NSString *)outputStringWithXCTestRuns:(NSArray *) testRuns;
+@interface BenchmarkReporter : NSObject <BenchmarkReporting>
 @end

@@ -6,6 +6,7 @@
 #import <objc/runtime.h>
 #import "BenchmarkTestCase.h"
 #import "BenchmarkTestUtil.h"
+#import "BenchmarkReporting.h"
 
 
 @implementation BenchmarkTestUtil {

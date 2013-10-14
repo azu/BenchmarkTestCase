@@ -13,7 +13,7 @@
 }
 
 
-+ (NSString *)outputStringWithXCTestRuns:(NSArray *) testRuns {
+- (NSString *)outputStringWithXCTestRuns:(NSArray *) testRuns {
     NSString *header = [NSString stringWithFormat:@"\n%-50s %-10s %-10s",
                                                   [@":Name" UTF8String], [@":Total(s)" UTF8String], [@":Avg(s)" UTF8String]];
     NSMutableArray *lineArray = [NSMutableArray arrayWithObject:header];

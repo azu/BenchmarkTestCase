@@ -34,6 +34,18 @@ run benchmark as testcase.
 -[BenchmarkString test_timePatternNSNumber]        0.00004    0.00000
 ```
 
+### Custom reporter
+
+Set ``setDefaultReporter:(NSObject <BenchmarkReporting>*)reporter``
+
+```objc
+@interface BenchmarkConfig : NSObject
++ (NSObject <BenchmarkReporting> *)defaultReporter;
+
++ (void)setDefaultReporter:(NSObject <BenchmarkReporting>*)reporter;
+@end
+```
+
 ## Contributing
 
 1. Fork it!

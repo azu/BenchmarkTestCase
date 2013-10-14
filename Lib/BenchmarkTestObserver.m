@@ -7,6 +7,7 @@
 #import "BenchmarkTestUtil.h"
 #import "BenchmarkReporter.h"
 #import "BenchmarkTestCase.h"
+#import "BenchmarkConfig.h"
 
 
 @interface BenchmarkTestObserver ()
@@ -41,8 +42,8 @@
     [super stopObserving];
     [BenchmarkTestUtil removeXCTestObserver];
     NSArray *filteredTestRuns = [self filteredTestRuns:self.testRuns];
-    NSString *string = [BenchmarkReporter outputStringWithXCTestRuns:filteredTestRuns];
-    NSLog(@"%@", string);
+    NSObject <BenchmarkReporting> *reporter = [BenchmarkConfig defaultReporter];
+    NSLog(@"%@", [reporter outputStringWithXCTestRuns:filteredTestRuns]);
 }
 
 
