@@ -27,8 +27,11 @@ pod 'BenchmarkTestCase',:git => 'https://github.com/azu/BenchmarkTestCase.git'
 run benchmark as testcase.
 
 ```
-2013-10-14 01:47:25.230 xctest[79268:303] benchYourTest
-└ Total :0.00495s | Avg.: 0.00000s
+:Name                                              :Total(s)  :Avg(s)
+-[BenchmarkAsTesting test_timePatternOne]          0.02917    0.00000
+-[BenchmarkAsTesting test_timePatternTwo]          0.02792    0.00000
+-[BenchmarkString test_timeCompilerPrimitive]      0.00006    0.00000
+-[BenchmarkString test_timePatternNSNumber]        0.00004    0.00000
 ```
 
 ## Contributing
