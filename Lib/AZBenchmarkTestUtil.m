@@ -18,6 +18,9 @@ NSString *const observerClassName = @"AZBenchmarkTestObserver";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *observers = [defaults objectForKey:XCTestObserverClassKey];
     NSMutableArray *values = [[observers componentsSeparatedByString:@","] mutableCopy];
+    if (values == nil) {// when first time, observers is null
+        values = [NSMutableArray arrayWithObject:@"XCTestLog"];
+    }
     if (![values containsObject:observerClassName]) {
         [values addObject:observerClassName];
     }
