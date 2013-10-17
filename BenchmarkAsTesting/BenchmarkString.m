@@ -16,6 +16,14 @@
 @implementation BenchmarkString {
 }
 
++ (NSUInteger)benchmarkRepeatCount {
+    return 50000;
+}
+
++ (NSString *)benchmarkPrefix {
+    return @"time";
+}
+
 
 - (void)timePatternNSNumber {
     [NSNumber numberWithInteger:1];

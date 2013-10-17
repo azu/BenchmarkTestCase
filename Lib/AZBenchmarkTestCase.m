@@ -17,7 +17,7 @@
 
 #pragma mark - Configuration
 + (NSString *)benchmarkPrefix {
-    return @"time";
+    return @"bench";
 }
 
 + (NSUInteger)benchmarkRepeatCount {

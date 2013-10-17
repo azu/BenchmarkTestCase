@@ -15,8 +15,8 @@ pod 'BenchmarkTestCase',:git => 'https://github.com/azu/BenchmarkTestCase.git'
 
 @end
 @implementation YourBenchmarkTestCase
-- (void)timeYourTest{
-    // default: time prefix is benchmark target.
+- (void)benchYourTest{
+    // default: `bench` prefix is benchmark target.
     // benchmark method...
 }
 @end
