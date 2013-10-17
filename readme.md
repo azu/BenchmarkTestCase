@@ -27,11 +27,11 @@ pod 'BenchmarkTestCase',:git => 'https://github.com/azu/BenchmarkTestCase.git'
 ``` objc
 // benchmark method prefix
 + (NSString *)benchmarkPrefix {
-    return @"time";
+    return @"time"; // default : @"bench"
 }
 // repeat count of benchmark method
 + (NSUInteger)benchmarkRepeatCount {
-    return 100;
+    return 100;// default : 100
 }
 ```
 
