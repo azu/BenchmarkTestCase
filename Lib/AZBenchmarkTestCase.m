@@ -43,11 +43,14 @@
 }
 
 #pragma mark - Setup
++ (void)load {
+    [super load];
+    [AZBenchmarkTestUtil addXCTestObserver];
+}
 
 + (void)initialize {
     [super initialize];
     [self setUpBenchmark];
-    [AZBenchmarkTestUtil addXCTestObserver];
 }
 
 + (void)setUpBenchmark {

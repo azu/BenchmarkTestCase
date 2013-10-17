@@ -7,6 +7,7 @@
 #import "AZBenchmarkReporter.h"
 #import "AZBenchmarkTestCase.h"
 #import "AZBenchmarkConfig.h"
+#import "AZBenchmarkTestUtil.h"
 
 
 @interface AZBenchmarkTestObserver ()
@@ -14,6 +15,7 @@
 @end
 
 @implementation AZBenchmarkTestObserver
+
 - (NSMutableArray *)testRuns {
     if (_testRuns == nil) {
         _testRuns = [NSMutableArray array];
@@ -42,8 +44,7 @@
 
 - (void)stopObserving {
     [super stopObserving];
-    // FIXME: first time doesn't observe this class...
-//    [AZBenchmarkTestUtil removeXCTestObserver];
+    [AZBenchmarkTestUtil removeXCTestObserver];
     NSArray *filteredTestRuns = [self filteredTestRuns:self.testRuns];
     NSObject <AZBenchmarkReporting> *reporter = [AZBenchmarkConfig defaultReporter];
     NSLog(@"%@", [reporter outputStringWithXCTestRuns:filteredTestRuns]);

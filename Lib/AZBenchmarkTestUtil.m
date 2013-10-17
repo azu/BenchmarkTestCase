@@ -3,35 +3,34 @@
 //
 
 
-#import <objc/runtime.h>
 #import "AZBenchmarkTestCase.h"
 #import "AZBenchmarkTestUtil.h"
-#import "AZBenchmarkTestObserver.h"
 
 
 @implementation AZBenchmarkTestUtil {
 
 }
 
+
+NSString *const observerClassName = @"AZBenchmarkTestObserver";
+
 + (void)addXCTestObserver {
-    NSString *className = NSStringFromClass([AZBenchmarkTestObserver class]);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *observers = [defaults objectForKey:XCTestObserverClassKey];
     NSMutableArray *values = [[observers componentsSeparatedByString:@","] mutableCopy];
-    if (![values containsObject:className]) {
-        [values addObject:className];
+    if (![values containsObject:observerClassName]) {
+        [values addObject:observerClassName];
     }
     [defaults setObject:[values componentsJoinedByString:@","] forKey:XCTestObserverClassKey];
     [defaults synchronize];
 }
 
 + (void)removeXCTestObserver {
-    NSString *className = NSStringFromClass([AZBenchmarkTestObserver class]);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *observers = [defaults objectForKey:XCTestObserverClassKey];
     NSMutableArray *values = [[observers componentsSeparatedByString:@","] mutableCopy];
-    if ([values containsObject:className]) {
-        [values removeObject:className];
+    if ([values containsObject:observerClassName]) {
+        [values removeObject:observerClassName];
     }
     if ([values count] == 0) {
         [defaults removeObjectForKey:XCTestObserverClassKey];
