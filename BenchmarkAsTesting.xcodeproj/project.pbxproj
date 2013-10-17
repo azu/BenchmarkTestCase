@@ -42,7 +42,6 @@
 		17B5CB6E6FEC3EF0524E9773 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = readme.md; sourceTree = "<group>"; };
 		17B5CB83CCABA031B40DAFEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17B5CBBA8E652744E3F293B1 /* AZBenchmarkTestUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZBenchmarkTestUtil.m; sourceTree = "<group>"; };
-		17B5CE365AB0B6FE444CF394 /* AZBenchmarkReporting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZBenchmarkReporting.h; sourceTree = "<group>"; };
 		17B5CECC45BF90554CE20609 /* AZBenchmarkTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZBenchmarkTestCase.m; sourceTree = "<group>"; };
 		17B5CEE425CF3C299D0A6EF9 /* AZBenchmarkReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZBenchmarkReporter.h; sourceTree = "<group>"; };
 		17B5CF00E98A78C9FEC0ADC0 /* BenchmarkAsTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BenchmarkAsTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +83,6 @@
 				17B5C718FE4CACE1174BCE89 /* AZBenchmarkTestUtil.h */,
 				17B5C4DC458E7F8C434EF3B1 /* AZBenchmarkReporter.m */,
 				17B5CEE425CF3C299D0A6EF9 /* AZBenchmarkReporter.h */,
-				17B5CE365AB0B6FE444CF394 /* AZBenchmarkReporting.h */,
 				17B5C2431FA0700D02D2FEE8 /* AZBenchmarkConfig.m */,
 				17B5C922AFB37E8602CA0C77 /* AZBenchmarkConfig.h */,
 			);

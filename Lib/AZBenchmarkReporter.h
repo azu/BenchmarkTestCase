@@ -4,8 +4,10 @@
 
 
 #import <Foundation/Foundation.h>
-#import "AZBenchmarkReporting.h"
 
+@protocol AZBenchmarkReporting <NSObject>
+- (NSString *)outputStringWithXCTestRuns:(NSArray *) testRuns;
+@end
 
 @interface AZBenchmarkReporter : NSObject <AZBenchmarkReporting>
 @end
