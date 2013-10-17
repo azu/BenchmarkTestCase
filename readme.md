@@ -5,10 +5,12 @@ XCTestCase for Benchmark.
 ## Installation
 
 ``` ruby
-pod 'BenchmarkTestCase',:git => 'https://github.com/azu/BenchmarkTestCase.git'
+pod 'BenchmarkTestCase'
 ```
 
 ## Usage
+
+``AZBenchmarkTestCase`` is subclass of XCTestCase.
 
 ```objc
 @interface YourBenchmarkTestCase : AZBenchmarkTestCase
