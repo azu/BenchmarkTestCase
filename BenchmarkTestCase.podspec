@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/azu/BenchmarkTestCase"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "azu" => "info@efcl.info" }
-  s.platform     = :ios, '7.0'
+  # s.platform     = :ios, '7.0'
   s.source       = { 
     :git => "https://github.com/azu/BenchmarkTestCase.git",
     :tag => s.version.to_s
