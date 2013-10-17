@@ -4,8 +4,7 @@
 
 
 #import <Foundation/Foundation.h>
-
-
+#import "AZBenchmarkReporter.h"
 @interface AZBenchmarkConfig : NSObject
 + (NSObject <AZBenchmarkReporting> *)defaultReporter;
 

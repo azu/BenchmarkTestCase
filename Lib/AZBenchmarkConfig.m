@@ -5,7 +5,6 @@
 
 #import "AZBenchmarkReporter.h"
 #import "AZBenchmarkConfig.h"
-#import "AZBenchmarkTestUtil.h"
 
 static NSObject <AZBenchmarkReporting> *_reporterReporting;
 
