@@ -4,7 +4,6 @@ Pod::Spec.new do |s|
   s.version      = "1.0"
   s.summary      = "XCTestCase for benchmark testing."
   s.homepage     = "https://github.com/azu/BenchmarkTestCase"
-  s.license      = 'MIT (example)'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "azu" => "info@efcl.info" }
   s.source       = { 
