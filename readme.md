@@ -65,7 +65,7 @@ Set ``setDefaultReporter:(NSObject <BenchmarkReporting>*)reporter``
 
 ## Known Issue
 
-Maybe Fix!
+Maybe Fixed!
 
 <del>First time doesn't work benchmark observer.
 I don't know when to add observe ``+ (void)addXCTestObserver;`` ...</del>

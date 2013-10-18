@@ -38,6 +38,11 @@
     [self.testRuns addObject:testRun];
 }
 
+- (void)testSuiteDidStop:(XCTestRun *) testRun {
+    [super testSuiteDidStop:testRun];
+}
+
+
 - (void)startObserving {
     [super startObserving];
 }
